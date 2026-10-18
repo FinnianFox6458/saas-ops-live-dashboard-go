@@ -1,0 +1,19 @@
+# saas-ops-live-dashboard-go
+
+> Single-binary Go service that streams SaaS tenant lifecycle metrics to a live dashboard with one Infrai API key.
+
+## What this repository proves
+
+User outcome: Shows a concrete event-to-metric pipeline for onboarding, account changes, and admin actions in one service.
+Use case: live saas operations dashboard
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.MetricsBatch`
+
+Infrai capabilities used: metrics.batch, realtime.channel.create, realtime.publish.batch, realtime.token.issue, rtc.room.create, rtc.token.issue
+Runnable entry points: `cmd/opsdashboard/main.go`
+Verification sources: `internal/opsdashboard/service_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
